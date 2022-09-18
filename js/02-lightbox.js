@@ -9,7 +9,7 @@ refs.gallery.innerHTML = createGaleryElement(galleryItems);
 function createGaleryElement(galleryItems) {
   return galleryItems
     .map(item => {
-      return /*html*/ `<a class="gallery__item" href="${item.original}">
+      return `<a class="gallery__item" href="${item.original}">
   <img class="gallery__image" src="${item.preview}" alt="${item.description}" />
 </a>`;
     })
@@ -18,5 +18,5 @@ function createGaleryElement(galleryItems) {
 
 let lightbox = new SimpleLightbox('.gallery a', {
   captionDelay: 250,
-  // captionsData: 'alt',
+  captionsData: 'alt',
 });
