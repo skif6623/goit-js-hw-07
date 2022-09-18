@@ -42,7 +42,6 @@ function onImageClick(event) {
   function closeModal(event) {
     if (event.code === 'Escape') {
       instance.close();
-      console.log(event.code);
     }
     window.removeEventListener('keydown', closeModal);
   }
