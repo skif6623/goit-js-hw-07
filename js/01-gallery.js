@@ -32,22 +32,18 @@ function onImageClick(event) {
     return;
   }
 
-  openModal(event);
-}
-
-function openModal(event) {
   const instance = basicLightbox.create(`
     <img src="${event.target.dataset.source}" width="800" height="600">
 `);
   instance.show();
 
-  closeModal(instance);
-}
+  window.addEventListener('keydown', closeModal);
 
-function closeModal(instance) {
-  refs.gallery.addEventListener('keydown', event => {
+  function closeModal(event) {
     if (event.code === 'Escape') {
       instance.close();
+      console.log(event.code);
     }
-  });
+    window.removeEventListener('keydown', closeModal);
+  }
 }
